@@ -61,47 +61,9 @@ We'll be using the excellent library [libtmux](https://github.com/tony/libtmux/)
 to work programmatically with TMUX.  This will allow us to discover the TMUX
 session / window / pane that contains a traceback.
 
-First things first, lets learn how to get our current TMUX session.  We need
-this session because we want to read the contents of the pane in the window of
-our session.  If you're new to TMUX, think of a session as a collection of
-windows managed by TMUX.  Each window itself is a collection of panes.  Each
-pane is running a process (like bash, or Vim).
-
-```python
-# connects to an existing tmux server
-server = tmux.Server()
-```
-
-We have a server, and on that server object, according to the docs, we can call
-`server.list_sessions()`, but that is going to be flaky to find our existing
-session.  Fortunately, libtmux provides an escape hatch to run raw TMUX commands
-with `server.cmd`.  Some googling tells us that, in order to get the current
-session name, we can run the TMUX command `display-message -p "#S"` to write our
-current session name to stdout.  We can then look up the session by that
-captured name:
-
-```python
-# connects to an existing tmux server
-server = tmux.Server()
-
-# evaluate the session name of our current session where we're executing
-sess_name = server.cmd("display-message", "-p", "#S").stdout[0]
-```
-
-Now we can look up our session:
-```python
-# connects to an existing tmux server
-server = tmux.Server()
-
-# evaluate the session name of our current session where we're executing
-sess_name = server.cmd("display-message", "-p", "#S").stdout[0]
-
-# actually fetch our session
-sess = server.find_where({"session_name": sess_name})
-```
-
-Now that we have our session, we want the window that we're in, since a session
-can have many windows.  Fortunately, this is pretty easy:
+First things first, lets learn how to get the contents of a TMUX pane.  If
+you're new to TMUX, there's a hierarchy of sessions containing windows
+containing panes.  Each pane is running a process (like bash, or Vim).
 
 ```python
 # connects to an existing tmux server
@@ -115,9 +77,13 @@ sess = server.find_where({"session_name": sess_name})
 
 # get our current window
 window = sess.attached_window
+
+# iterate over our panes
+for pane in window.panes:
+    pass
 ```
 
-Bingo.  So we have our current window, which contains a collection of panes.
+Bingo.  So now we have access to the window panes where our script is running.
 Each pane has text content that can be read with libtmux.  So let's veer down a
 different path and think about a related problem: given some string content, how
 will we determine if there's an exception, and what to do about it?
