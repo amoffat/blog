@@ -16,7 +16,7 @@ could provide tools according to that content?  I'm going to show how to do that
 by building an example Vim plugin that can open the file where a Python traceback
 occurred.
 
-<asciinema-player src="/assets/screencasts/tmux.cast?{{site.time | date: '%s%N'}}" autoplay="1" loop="1"></asciinema-player>
+<asciinema-player src="{{site.baseurl}}/assets/screencasts/tmux.cast?{{site.time | date: '%s%N'}}" autoplay="1" loop="1"></asciinema-player>
 
 In the above screencast, you can see we run a contrived Python script that
 raises an exception.  When we press a key sequence in Vim, our plugin analyzes
@@ -37,7 +37,7 @@ snake.abbrev("rightnow", lambda: datetime.datetime.utcnow().strftime("%c"))
 Now any time you type "rightnow", the Python lambda will be called which
 evaluates the current datetime and expands "rightnow" to that time:
 
-<asciinema-player src="/assets/screencasts/rightnow.cast?{{site.time | date: '%s%N'}}" loop="1" autoplay="1"></asciinema-player>
+<asciinema-player src="{{site.baseurl}}/assets/screencasts/rightnow.cast?{{site.time | date: '%s%N'}}" loop="1" autoplay="1"></asciinema-player>
 
 You can also bind keypresses to Python functions, for example, to take the word
 under the cursor, look it up on thesaurus.com, and replace it with the nearest
@@ -306,7 +306,7 @@ if __name__ == "__main__":
 
 And running it:
 
-<asciinema-player src="/assets/screencasts/find_traceback.cast?{{site.time | date: '%s%N'}}" loop="1" autoplay="1"></asciinema-player>
+<asciinema-player src="{{site.baseurl}}/assets/screencasts/find_traceback.cast?{{site.time | date: '%s%N'}}" loop="1" autoplay="1"></asciinema-player>
 
 Now we have a useful function that we can connect to Snake and use
 directly from Vim.
@@ -472,6 +472,6 @@ code will be wrapped with a `try` block and a debugger in the `except` block.
 So now in that place that raised previously raised an exception, you can have a
 debugger to figure out exactly what happened.
 
-<asciinema-player src="/assets/screencasts/try_except.cast?{{site.time | date: '%s%N'}}" loop="1" autoplay="1"></asciinema-player>
+<asciinema-player src="{{site.baseurl}}/assets/screencasts/try_except.cast?{{site.time | date: '%s%N'}}" loop="1" autoplay="1"></asciinema-player>
 
 {% include asciinema.html %}
