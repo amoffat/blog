@@ -4,7 +4,7 @@ title:  "Advanced Python development in Vim+TMUX"
 date: 2018-03-01T09:50:04.567394 
 categories: debugging editing
 tags: snake vim python tmux
-permalink: /advanced-python-tmux-vim.html
+permalink: /advanced-python-tmux-vim
 ---
 
 TMUX and Vim are powerful tools in a commandline environment, but their
