@@ -1,0 +1,7 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.post-content h1 { font-size: 40px; }
+@media screen and (max-width: 800px) { .post-content h1 { font-size: 32px; } }
