@@ -19,7 +19,7 @@ baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  amoffat
 description: >
-    Tools that help you amplify your effort to produce more output.
+    Amplifying effort to increase output
 
 # Build settings
 markdown: kramdown
