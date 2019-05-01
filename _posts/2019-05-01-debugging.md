@@ -30,7 +30,7 @@ became more manageable.  When you learned to write tests, you learned the value 
 around the requirements of your code, and should your amorphous code break through this scaffolding, you were likely to
 detect it, and at the very least reproduce the conditions causing the breach.  This too is a form of a debugging tool.
 
-Time-travelling debuggers like [rr](<https://en.wikipedia.org/wiki/Rr_(debugging>) further expand on this tooling by
+Time-travelling debuggers like [rr](<https://en.wikipedia.org/wiki/Rr_(debugging)>) further expand on this tooling by
 creating deterministic execution traces of your software, allowing you to set breakpoints both forwards and backwards(!)
 in time.  This lets you interactively walk forwards and backwards down any and all execution paths your program took,
 without restarting.  Now you can think more creatively about bugs and test hypotheses in real time, without the
