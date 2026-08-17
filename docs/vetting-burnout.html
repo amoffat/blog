@@ -1,34 +1,4 @@
 <!DOCTYPE html>
-<!--
-  The vetting cliff — standalone interactive figure.
-
-  THEME: dark, unconditionally. No prefers-color-scheme dependency — the colours are
-  hardcoded so it renders identically wherever it lands. Page background is #262624.
-
-  PLACEHOLDER COPY: everything inside <article class="post"> is lorem ipsum standing in
-  for your title, byline, and body text. Delete that block when you drop the figure into
-  a real post; the figure is the <hr class="rule"> plus the <div class="bvz"> element.
-
-  TWO WAYS TO USE THIS:
-
-  1. iframe (recommended — no style collisions with your blog theme):
-       <iframe src="/vetting-burnout.html" title="The vetting cliff"
-               style="width:100%;border:0;height:1220px" id="bvz-frame"></iframe>
-     Optional auto-height, paste into your page:
-       <script>
-       addEventListener('message', function (e) {
-         if (e.data && e.data.bvzHeight) {
-           document.getElementById('bvz-frame').style.height = e.data.bvzHeight + 'px';
-         }
-       });
-       </script>
-
-  2. Inline: copy the <style> block from the head, plus the <hr>, the <div class="bvz">,
-     and the two <script> tags from the body. All CSS is scoped under .bvz (and .post for
-     the placeholder copy), so nothing leaks into your theme.
-
-  Dependencies: Chart.js 4.4.1 from cdnjs. Nothing else.
--->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -144,10 +114,10 @@
 
 <!-- PLACEHOLDER COPY — delete this whole <article> when embedding for real -->
 <article class="post">
-  <h1>Vetted AI code is hard to justify</h1>
+  <h1>The vetting cliff</h1>
   <p class="meta">Andrew · 17 August 2026 · 3 min read</p>
 
-  <p class="lede">There's a high cost to comprehending every line of code.</p>
+  <p class="lede">Vetted AI code is hard to justify</p>
 
   <p>I have been reflecting on <a href="https://x.com/GetLostTheGame/status/2087864598804525248">a large optimization I built for my game</a> with the assistance of a frontier coding agent. This optimization took me several days to plan with the agent, about a week to comprehend the massive diff it produced (I review and approve every line), and another week to refactor and refine it until completion.</p>
 
